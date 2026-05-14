@@ -431,24 +431,31 @@
 
 <script>
   // ─── Filter buttons ───
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const sections = document.querySelectorAll('.section');
+const filterBtns = document.querySelectorAll('.filter-btn');
+const sections = document.querySelectorAll('.section');
 
-  filterBtns.forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      filterBtns.forEach(function(b) { b.classList.remove('active'); });
-      this.classList.add('active');
+function applyFilter(cat) {
+  filterBtns.forEach(function(b) { b.classList.remove('active'); });
+  document.querySelector('[data-cat="' + cat + '"]').classList.add('active');
 
-      var cat = this.getAttribute('data-cat');
-      sections.forEach(function(sec) {
-        if (cat === 'all') {
-          sec.style.display = '';
-        } else {
-          sec.style.display = (sec.id === cat) ? '' : 'none';
-        }
-      });
-    });
+  sections.forEach(function(sec) {
+    sec.style.display = (cat === 'all' || sec.id === cat) ? '' : 'none';
   });
+}
+
+// Зчитуємо параметр з URL
+const params = new URLSearchParams(window.location.search);
+const catParam = params.get('cat');
+if (catParam) {
+  applyFilter(catParam);
+}
+
+// Кнопки-фільтри
+filterBtns.forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    applyFilter(this.getAttribute('data-cat'));
+  });
+});
 </script>
 
 </body>
