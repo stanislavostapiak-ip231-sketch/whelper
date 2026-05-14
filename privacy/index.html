@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Політика конфіденційності — Whelper</title>
+  <meta name="description" content="Політика конфіденційності сайту Whelper. Інформація про використання cookies та Google Analytics.">
+  <meta name="robots" content="noindex, follow">
+
+  <link rel="canonical" href="https://whelper.me/privacy">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { overflow-x: hidden; scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f4f8;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    /* ─── Header ─── */
+    .site-header {
+      background: #1a2332;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      width: 100%;
+    }
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .site-logo {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+    }
+    .site-logo span { color: #3b9eff; }
+    nav { display: flex; gap: 2px; }
+    nav a {
+      color: #b0bec5;
+      text-decoration: none;
+      font-size: 0.85rem;
+      padding: 6px 12px;
+      border-radius: 6px;
+      white-space: nowrap;
+      transition: color .2s, background .2s;
+    }
+    nav a:hover { color: #fff; background: rgba(255,255,255,0.08); }
+
+    /* ─── Page hero ─── */
+    .page-hero {
+      background: #1a2332;
+      padding: 44px 20px 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .page-hero-inner { max-width: 1100px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      color: #5d7a99;
+      margin-bottom: 16px;
+    }
+    .breadcrumb a { color: #5d7a99; text-decoration: none; }
+    .breadcrumb a:hover { color: #3b9eff; }
+    .breadcrumb-sep { opacity: .5; }
+    .page-hero h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.025em;
+      margin-bottom: 10px;
+    }
+    .page-hero p {
+      font-size: 0.88rem;
+      color: #5d7a99;
+    }
+
+    /* ─── Page wrap ─── */
+    .page-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 44px 20px 72px;
+    }
+
+    /* ─── Content card ─── */
+    .content-card {
+      background: #fff;
+      border-radius: 12px;
+      border: 1px solid #e5e9ef;
+      padding: 36px 40px;
+    }
+
+    .content-card h2 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1a2332;
+      margin: 28px 0 10px;
+      letter-spacing: -0.01em;
+    }
+    .content-card h2:first-child { margin-top: 0; }
+
+    .content-card p {
+      font-size: 0.9rem;
+      color: #4a5568;
+      line-height: 1.75;
+      margin-bottom: 10px;
+    }
+    .content-card p:last-child { margin-bottom: 0; }
+
+    .content-card ul {
+      margin: 8px 0 10px 20px;
+    }
+    .content-card ul li {
+      font-size: 0.9rem;
+      color: #4a5568;
+      line-height: 1.75;
+      margin-bottom: 4px;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid #e5e9ef;
+      margin: 24px 0;
+    }
+
+    .highlight-box {
+      background: #f0f7ff;
+      border: 1px solid #cce0ff;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin: 12px 0;
+    }
+    .highlight-box p {
+      font-size: 0.85rem;
+      color: #2c5282;
+      margin: 0;
+    }
+
+    .updated-note {
+      font-size: 0.78rem;
+      color: #95a5a6;
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid #e5e9ef;
+    }
+
+    /* ─── Footer ─── */
+    footer {
+      background: #1a2332;
+      color: #7f8c8d;
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 0.82rem;
+    }
+    footer a { color: #3b9eff; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    .footer-links { margin-top: 8px; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 600px) {
+      .page-hero h1 { font-size: 1.35rem; }
+      .page-hero { padding: 32px 16px 28px; }
+      .page-wrap { padding: 24px 14px 48px; }
+      .content-card { padding: 24px 20px; }
+      nav a { padding: 6px 8px; font-size: 0.78rem; }
+    }
+    @media (max-width: 380px) {
+      nav a:last-child { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ Header ═══ -->
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a href="https://whelper.me" class="site-logo">W<span>helper</span></a>
+    <nav aria-label="Основна навігація">
+      <a href="https://whelper.me">Головна</a>
+      <a href="https://whelper.me/articles">Статті</a>
+      <a href="https://whelper.me/about">Про Whelper</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ═══ Page hero ═══ -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <nav class="breadcrumb" aria-label="Хлібні крихти">
+      <a href="https://whelper.me">Головна</a>
+      <span class="breadcrumb-sep" aria-hidden="true">›</span>
+      <span aria-current="page">Політика конфіденційності</span>
+    </nav>
+    <h1>Політика конфіденційності</h1>
+    <p>Останнє оновлення: травень 2026</p>
+  </div>
+</div>
+
+<!-- ═══ Main content ═══ -->
+<main class="page-wrap" id="main-content">
+  <div class="content-card">
+
+    <h2>Загальна інформація</h2>
+    <p>Whelper (<a href="https://whelper.me">whelper.me</a>) — особистий блог про штучний інтелект. Ця сторінка пояснює, які дані збираються при відвідуванні сайту і як вони використовуються.</p>
+
+    <hr class="divider">
+
+    <h2>Які дані збираються</h2>
+    <p>Сайт не збирає особистих даних напряму. Однак для аналізу відвідуваності використовуються сторонні сервіси Google, які автоматично збирають технічну інформацію:</p>
+    <ul>
+      <li>IP-адреса (в анонімізованому вигляді)</li>
+      <li>Тип браузера та операційна система</li>
+      <li>Сторінки, які ви відвідали, і час перебування на них</li>
+      <li>Країна та приблизне місцезнаходження</li>
+      <li>Джерело переходу (пошукова система, пряме посилання тощо)</li>
+    </ul>
+
+    <hr class="divider">
+
+    <h2>Google Analytics</h2>
+    <p>Сайт використовує Google Analytics — сервіс веб-аналітики від Google LLC. Він допомагає розуміти, які матеріали цікаві читачам, звідки приходить трафік і як люди користуються сайтом.</p>
+    <div class="highlight-box">
+      <p>Google Analytics використовує cookies — невеликі файли, які зберігаються у вашому браузері. Дані передаються на сервери Google і обробляються відповідно до <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Політики конфіденційності Google</a>.</p>
+    </div>
+    <p>Ви можете відмовитись від відстеження через <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">офіційне розширення Google Analytics Opt-out</a> або налаштувавши блокування cookies у своєму браузері.</p>
+
+    <hr class="divider">
+
+    <h2>Google Search Console</h2>
+    <p>Для моніторингу присутності сайту в пошуку Google використовується Google Search Console. Цей інструмент не збирає даних про конкретних відвідувачів — він показує лише агреговану статистику пошукових запитів і технічний стан сайту.</p>
+
+    <hr class="divider">
+
+    <h2>Cookies</h2>
+    <p>Сайт самостійно не встановлює cookies. Cookies можуть встановлюватись виключно через Google Analytics, описаний вище. Ви можете керувати cookies через налаштування свого браузера:</p>
+    <ul>
+      <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener">Google Chrome</a></li>
+      <li><a href="https://support.mozilla.org/uk/kb/vklyuchennya-i-vyklyuchennya-kuky" target="_blank" rel="noopener">Mozilla Firefox</a></li>
+      <li><a href="https://support.apple.com/uk-ua/guide/safari/sfri11471/mac" target="_blank" rel="noopener">Safari</a></li>
+    </ul>
+
+    <hr class="divider">
+
+    <h2>Посилання на зовнішні сайти</h2>
+    <p>Статті можуть містити посилання на зовнішні ресурси. Whelper не несе відповідальності за політику конфіденційності цих сайтів.</p>
+
+    <hr class="divider">
+
+    <h2>Зміни до політики</h2>
+    <p>У разі суттєвих змін (наприклад, підключення нових сервісів) ця сторінка буде оновлена. Дата оновлення відображена вгорі сторінки.</p>
+
+    <p class="updated-note">Є питання? Напишіть через <a href="https://whelper.me/about">сторінку про сайт</a>.</p>
+
+  </div>
+</main>
+
+<!-- ═══ Footer ═══ -->
+<footer role="contentinfo">
+  <p>© 2026 <a href="https://whelper.me">Whelper</a> — AI-інструменти українською</p>
+  <div class="footer-links">
+    <a href="https://whelper.me/about">Про сайт</a>
+    <a href="https://whelper.me/privacy">Політика конфіденційності</a>
+  </div>
+</footer>
+
+</body>
+</html>
