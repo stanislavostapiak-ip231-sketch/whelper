@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Про Whelper — AI-блог від Vel0r</title>
+  <meta name="description" content="Whelper — особистий блог про штучний інтелект. Огляди, туторіали та порівняння AI-інструментів від Vel0r.">
+
+  <link rel="canonical" href="https://whelper.me/about">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Про Whelper — AI-блог від Vel0r">
+  <meta property="og:description" content="Особистий блог про штучний інтелект: огляди, туторіали та порівняння AI-інструментів.">
+  <meta property="og:url" content="https://whelper.me/about">
+  <meta property="og:site_name" content="Whelper">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Про Whelper | Vel0r">
+  <meta name="twitter:site" content="@whelper_ua">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "AboutPage",
+        "@id": "https://whelper.me/about#page",
+        "name": "Про Whelper",
+        "url": "https://whelper.me/about",
+        "inLanguage": "uk",
+        "isPartOf": { "@id": "https://whelper.me#website" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Головна", "item": "https://whelper.me" },
+          { "@type": "ListItem", "position": 2, "name": "Про Whelper", "item": "https://whelper.me/about" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { overflow-x: hidden; scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f4f8;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    /* ─── Header ─── */
+    .site-header {
+      background: #1a2332;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      width: 100%;
+    }
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .site-logo {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: -0.02em;
+      flex-shrink: 0;
+    }
+    .site-logo span { color: #3b9eff; }
+    nav { display: flex; gap: 2px; }
+    nav a {
+      color: #b0bec5;
+      text-decoration: none;
+      font-size: 0.85rem;
+      padding: 6px 12px;
+      border-radius: 6px;
+      white-space: nowrap;
+      transition: color .2s, background .2s;
+    }
+    nav a:hover, nav a[aria-current="page"] { color: #fff; background: rgba(255,255,255,0.08); }
+
+    /* ─── Page hero ─── */
+    .page-hero {
+      background: #1a2332;
+      padding: 44px 20px 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .page-hero-inner { max-width: 1100px; margin: 0 auto; }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      color: #5d7a99;
+      margin-bottom: 16px;
+    }
+    .breadcrumb a { color: #5d7a99; text-decoration: none; }
+    .breadcrumb a:hover { color: #3b9eff; }
+    .breadcrumb-sep { opacity: .5; }
+    .page-hero h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.025em;
+      margin-bottom: 10px;
+    }
+    .page-hero p {
+      font-size: 0.95rem;
+      color: #7f8c8d;
+      max-width: 480px;
+      line-height: 1.65;
+    }
+
+    /* ─── Page wrap ─── */
+    .page-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 44px 20px 72px;
+    }
+
+    /* ─── About card ─── */
+    .about-card {
+      background: #fff;
+      border-radius: 12px;
+      border: 1px solid #e5e9ef;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+    .about-card-header {
+      background: linear-gradient(135deg, #1a2332 0%, #2c3e50 100%);
+      padding: 32px 32px 28px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: rgba(59,158,255,0.2);
+      border: 2px solid rgba(59,158,255,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      flex-shrink: 0;
+    }
+    .author-info h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+    }
+    .author-info p {
+      font-size: 0.82rem;
+      color: #7f8c8d;
+    }
+    .about-card-body { padding: 28px 32px; }
+    .about-card-body p {
+      font-size: 0.95rem;
+      color: #4a5568;
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+    .about-card-body p:last-child { margin-bottom: 0; }
+
+    /* ─── What's coming ─── */
+    .coming-card {
+      background: #fff;
+      border-radius: 12px;
+      border: 1px solid #e5e9ef;
+      padding: 28px 32px;
+      margin-bottom: 24px;
+    }
+    .coming-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1a2332;
+      margin-bottom: 18px;
+      letter-spacing: -0.01em;
+    }
+    .coming-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .coming-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 16px;
+      background: #f8fafc;
+      border-radius: 8px;
+      border: 1px solid #edf2f7;
+    }
+    .coming-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .coming-item-text h4 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #1a2332;
+      margin-bottom: 3px;
+    }
+    .coming-item-text p {
+      font-size: 0.8rem;
+      color: #7f8c8d;
+      line-height: 1.5;
+    }
+    .soon-badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      background: #fff8e1;
+      color: #f39c12;
+      border: 1px solid #fdeaa7;
+      padding: 2px 7px;
+      border-radius: 4px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+
+    /* ─── CTA ─── */
+    .cta-card {
+      background: #1a2332;
+      border-radius: 12px;
+      padding: 28px 32px;
+      text-align: center;
+    }
+    .cta-card p {
+      font-size: 0.92rem;
+      color: #7f8c8d;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #3b9eff;
+      color: #fff;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 10px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background .2s;
+    }
+    .cta-btn:hover { background: #2980d9; }
+
+    /* ─── Footer ─── */
+    footer {
+      background: #1a2332;
+      color: #7f8c8d;
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 0.82rem;
+    }
+    footer a { color: #3b9eff; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    .footer-links { margin-top: 8px; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 600px) {
+      .page-hero h1 { font-size: 1.35rem; }
+      .page-hero { padding: 32px 16px 28px; }
+      .page-wrap { padding: 24px 14px 48px; }
+      nav a { padding: 6px 8px; font-size: 0.78rem; }
+      .about-card-header { padding: 24px 20px; flex-direction: column; align-items: flex-start; gap: 14px; }
+      .about-card-body { padding: 20px; }
+      .coming-card { padding: 20px; }
+      .cta-card { padding: 22px 20px; }
+    }
+    @media (max-width: 380px) {
+      nav a:last-child { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ Header ═══ -->
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a href="https://whelper.me" class="site-logo">W<span>helper</span></a>
+    <nav aria-label="Основна навігація">
+      <a href="https://whelper.me">Головна</a>
+      <a href="https://whelper.me/articles">Статті</a>
+      <a href="https://whelper.me/about" aria-current="page">Про Whelper</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ═══ Page hero ═══ -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <nav class="breadcrumb" aria-label="Хлібні крихти">
+      <a href="https://whelper.me">Головна</a>
+      <span class="breadcrumb-sep" aria-hidden="true">›</span>
+      <span aria-current="page">Про Whelper</span>
+    </nav>
+    <h1>Про Whelper</h1>
+    <p>Особистий блог про штучний інтелект — просто і по суті</p>
+  </div>
+</div>
+
+<!-- ═══ Main content ═══ -->
+<main class="page-wrap" id="main-content">
+
+  <!-- Про автора -->
+  <div class="about-card">
+    <div class="about-card-header">
+      <div class="avatar" aria-hidden="true">👤</div>
+      <div class="author-info">
+        <h2>Vel0r</h2>
+        <p>Автор і адміністратор Whelper</p>
+      </div>
+    </div>
+    <div class="about-card-body">
+      <p>Whelper — це мій особистий блог про штучний інтелект. Я веду його для себе: щоб розбиратися в AI-інструментах, тестувати їх і фіксувати те, що дізнаюся.</p>
+      <p>Тут не буде корпоративного тону чи реклами — тільки чесні враження від реального використання.</p>
+    </div>
+  </div>
+
+  <!-- Що буде на сайті -->
+  <div class="coming-card">
+    <h3>Що з'явиться на сайті</h3>
+    <div class="coming-list">
+
+      <div class="coming-item">
+        <div class="coming-icon" style="background:#e8f4fd;" aria-hidden="true">🔍</div>
+        <div class="coming-item-text">
+          <h4>Огляди <span class="soon-badge">Вже є</span></h4>
+          <p>Детальне тестування AI-сервісів — що вміють, скільки коштують, кому підійдуть</p>
+        </div>
+      </div>
+
+      <div class="coming-item">
+        <div class="coming-icon" style="background:#e8f5e9;" aria-hidden="true">📖</div>
+        <div class="coming-item-text">
+          <h4>Туторіали <span class="soon-badge">Скоро</span></h4>
+          <p>Покрокові інструкції — як налаштувати і використовувати конкретний інструмент</p>
+        </div>
+      </div>
+
+      <div class="coming-item">
+        <div class="coming-icon" style="background:#fce4ec;" aria-hidden="true">⚖️</div>
+        <div class="coming-item-text">
+          <h4>Порівняння <span class="soon-badge">Скоро</span></h4>
+          <p>X vs Y — розбираю два схожі сервіси і пояснюю, який і коли обрати</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-card">
+    <p>Поки що на сайті є перша стаття — огляд AI-інструментів для презентацій. Більше матеріалів з'явиться незабаром.</p>
+    <a href="https://whelper.me/articles" class="cta-btn">
+      Читати статті
+      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+
+</main>
+
+<!-- ═══ Footer ═══ -->
+<footer role="contentinfo">
+  <p>© 2026 <a href="https://whelper.me">Whelper</a> — AI-інструменти українською</p>
+  <div class="footer-links">
+    <a href="https://whelper.me/about">Про сайт</a>
+    <a href="https://whelper.me/privacy">Політика конфіденційності</a>
+  </div>
+</footer>
+
+</body>
+</html>
