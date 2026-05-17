@@ -1,4 +1,7 @@
 User-Agent: *
 Allow: /
 
+User-Agent: YandexBot
+Disallow: /
+
 Sitemap: https://whelper.me/sitemap.xml
