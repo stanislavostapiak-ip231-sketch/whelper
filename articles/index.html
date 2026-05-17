@@ -437,10 +437,14 @@ const sections = document.querySelectorAll('.section');
 function applyFilter(cat) {
   filterBtns.forEach(function(b) { b.classList.remove('active'); });
   document.querySelector('[data-cat="' + cat + '"]').classList.add('active');
-
   sections.forEach(function(sec) {
     sec.style.display = (cat === 'all' || sec.id === cat) ? '' : 'none';
   });
+  // Оновлюємо URL без перезавантаження
+  const newUrl = cat === 'all'
+    ? window.location.pathname
+    : window.location.pathname + '?cat=' + cat;
+  history.pushState({ cat: cat }, '', newUrl);
 }
 
 // Зчитуємо параметр з URL
